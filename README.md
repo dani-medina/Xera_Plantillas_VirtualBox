@@ -20,3 +20,10 @@ Depois, se atopa o arquivo o importa en VirtualBox e finalmente, fai as seguinte
 - Pon a tarxeta en rede interna.
 - Xera unha MAC aleatoria para a plantilla.
 - Activa o hostiocache.
+
+## Para executalo:
+
+```bash 
+bash Crea_Plantillas.bash
+```
+
