@@ -60,10 +60,9 @@ Isto crea `Plantillas.txt` a partir de `Plantillas.txt.orixinal` (o orixinal non
 
 ### 2. Importar as plantillas
 
-O script de importación usa a variable `FICHEIROPLANTILLAS`, que debe apuntar ao ficheiro xerado:
+
 
 ```bash
-export FICHEIROPLANTILLAS=Plantillas.txt
 ./02_Xera-Plantillas.bash
 ```
 
