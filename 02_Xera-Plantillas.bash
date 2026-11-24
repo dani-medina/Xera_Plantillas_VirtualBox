@@ -1,10 +1,11 @@
 #!/bin/bash
 
-#Na variable ruta poñemos as rutas aos arquivo OVA que queremos importar separadas por espazos
-
-FICHEIROPLANTILLASORIXINAL="Plantillas.txt.orixinal"
 FICHEIROPLANTILLAS="Plantillas.txt"
-sed  "s/USUARIO/${USER}/g" ${FICHEIROPLANTILLASORIXINAL} > ${FICHEIROPLANTILLAS}   
+if [ ! -f "$FICHEIROPLANTILLAS" ]; then
+    echo "Non se atopa $FICHEIROPLANTILLAS" >&2
+    exit 1
+fi
+
 
 #Modificamos IFS para que non faga saltos no bucle cos espazos dos nomes das variables.
 IFS=$'\n'
@@ -29,6 +30,8 @@ do
 			vboxmanage modifyvm "${NOME}" --nic1 intnet --intnet1 intnet
 			vboxmanage modifyvm "${NOME}" --macaddress1 auto
 			vboxmanage storagectl "${NOME}" --name SATA --hostiocache on
+		else
+			echo "A plantilla ${NOME} xa existe, omítese"
 			
 		fi
 	else
